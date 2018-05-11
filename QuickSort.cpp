@@ -3,7 +3,7 @@
 void quickSort(int *a, int first, int last)
 {	
 	int max = sizeof(a) / sizeof(int);
-	if(first >= max || last >= max || last <= first))
+	if(first >= max || last >= max || last <= first)
 	{
 		return;
 	}
@@ -13,11 +13,11 @@ void quickSort(int *a, int first, int last)
 	int temp = 0;
 	while(left <= right)
 	{
-		while(a[right] > pivot && right >= left)
+		while(a[right] >= pivot && right >= left)
 		{
 			right--;
 		}
-		while(a[left] < pivot && left <= right)
+		while(a[left] <= pivot && left <= right)
 		{
 			left++;
 		}
@@ -32,8 +32,8 @@ void quickSort(int *a, int first, int last)
 		a[right] = temp;
 		left++, right++;
 	}
-	a[first] = a[right];
-	a[right] = pivot;
+	//a[first] = a[right];
+	//a[right] = pivot;
 	quickSort(a, first, right - 1);
 	quickSort(a, left, last);
 }
